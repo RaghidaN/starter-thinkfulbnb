@@ -31,7 +31,11 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  width: 100%;
+}
+
+img {
+  width: 100%;
 }
 
 /* ---  Groups & Items --- */
@@ -39,6 +43,7 @@ main img {
 .group {
   display: flex;
   flex-direction: column;
+  margin-bottom: 100px;
 }
 
 .item {
@@ -50,12 +55,45 @@ main img {
   flex: 2;
 }
 
+.grid-container {
+  display: grid;
+  gap: 50px;
+}
+
+.item1 {
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
 /* -------  Navigation ------- */
 
 header {
   background-color: #ff385c;
   padding: 20px 20px 0 20px;
   text-align: center;
+}
+
+header nav {
+  /* Changes the display property from its default to `flex`. */
+  display: flex;
+  /* Centers an element defined as `display: flex`. */
+  justify-content: center;
+}
+
+header nav ul {
+  /* Changes the display property from its default to `flex`, in single row */
+  display: flex;
+
+  /*
+    Removes the default padding to the left of the
+    unordered list.
+  */
+  padding-left: 0;
+
+  /*
+    Removes the bullet points from the list items within the 
+    unordered list.
+  */
+  list-style: none;
 }
 
 .logo {
@@ -70,14 +108,25 @@ header nav ul li {
 
 header nav ul li a {
   color: #fff;
+  /* Removes the underline from the link. */
   text-decoration: none;
-  padding: 0 20px 0 0;
+  /* Applies 20 pixels of margin to the right of each link 
+     creating a visual gap between the navigation links. */
+  margin: 0 20px 0 0;
+}
+
+header nav ul li:last-child a {
+  /* Removes the margin to the right of the last anchor tag 
+     so that the nav appears centered. */
+  margin-right: 0;
 }
 
 header nav ul li a:hover {
   color: #bdbdbd;
   text-decoration: none;
 }
+
+
 
 /* -------  Search Form ------- */
 form {
@@ -117,3 +166,70 @@ footer p {
 }
 
 /* -------  Media Query ------- */
+/* When a web browser is larger than 600 pixels,
+   apply these rules. */
+   @media all and (min-width: 480px) {
+    header {
+      /* Changes the default setting from `block` to `flex`. */
+      display: flex;
+      /* Pushes the items (the title and nav) to the far sides of the 
+         browser with space between them. */
+      justify-content: space-between;
+      /* Adds 0 pixels padding top and bottom, and 30 pixels padding 
+         left and right. */
+      padding: 0 30px;
+      flex-direction: row;
+
+    }
+  
+    header h1 {
+      /* Sets 14 pixels of margin above and below the `h1` and sets 
+          0 pixels of margin to the left and right. */
+      margin: 14px 0;
+      /* Removes or sets 0 pixels of padding above the `h1`. */
+      padding-top: 0;
+    }
+  
+    header nav {
+      padding: 10px;
+    }
+    /* Users cannot hover on mobile devices, so that is why you
+       implement this behavior only for larger screens. */
+    header nav ul li a:hover {
+      /* Targets the change when a user holds the pointer over the anchor tag 
+         (link) within the list items within the unordered list that 
+         is within the navigation that is within the header. */
+      color: #bdbdbd;
+    }
+      section,
+      h1 {
+        padding: 0 10%;
+      }
+    
+      .group {
+        flex-direction: row;
+        justify-content: center;
+        flex-flow: row nowrap;
+        align-items: center;
+      }
+
+      form {
+        flex-direction: row;
+      }
+    
+
+        .grid-column {
+          display: flex;
+          flex: 1;
+          flex-direction: column; 
+          margin: 10px;
+        }
+      
+        .grid-row {
+          display: flex;
+          flex: 1;
+          flex-direction: row;
+        }
+      
+
+  }
