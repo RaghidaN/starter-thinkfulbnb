@@ -34,16 +34,13 @@ main img {
   width: 100%;
 }
 
-img {
-  width: 100%;
-}
+
 
 /* ---  Groups & Items --- */
 
 .group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 100px;
 }
 
 .item {
@@ -55,20 +52,8 @@ img {
   flex: 2;
 }
 
-.grid-container {
-  display: grid;
-  gap: 50px;
-}
 
-.item1 {
-  grid-row-start: 1;
-  grid-row-end: 3;
-}
 
-.bottomgroup {
-  display: flex;
-  flex-direction: column;
-}
 /* -------  Navigation ------- */
 
 header {
@@ -77,33 +62,16 @@ header {
   text-align: center;
 }
 
-header nav {
-  /* Changes the display property from its default to `flex`. */
-  display: flex;
-  /* Centers an element defined as `display: flex`. */
-  justify-content: center;
-}
 
 header nav ul {
   /* Changes the display property from its default to `flex`, in single row */
   display: flex;
-
-  /*
-    Removes the default padding to the left of the
-    unordered list.
-  */
-  padding-left: 0;
-
-  /*
-    Removes the bullet points from the list items within the 
-    unordered list.
-  */
-  list-style: none;
+  justify-content: center;
 }
 
 .logo {
   font-family: "Pangolin", cursive;
-  font-size: 72px;
+  font-size: 50px;
   color: #fff;
 }
 
@@ -121,9 +89,7 @@ header nav ul li a {
 }
 
 header nav ul li:last-child a {
-  /* Removes the margin to the right of the last anchor tag 
-     so that the nav appears centered. */
-  margin-right: 0;
+  margin-right: 20;
 }
 
 header nav ul li a:hover {
@@ -149,7 +115,7 @@ form label {
 form select,
 form input {
   margin-bottom: 20px;
-  width: 180px;
+  width: 65%;
 }
 
 form button {
@@ -181,15 +147,12 @@ footer p {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      background-color: #ff385c;
 
 
     }
   
-    header h1 {
-      margin: 14px 0;
-      padding-top: 0;
-    }
-  
+    
     header nav {
       padding: 10px;
     }
@@ -201,33 +164,13 @@ footer p {
          is within the navigation that is within the header. */
       color: #bdbdbd;
     }
-      section,
-      h1 {
-        padding: 0 10%;
-      }
-    
-      .group {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-flow: row nowrap;
-        align-items: center;
-      }
-
-      .bottomgroup {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        flex-flow: row nowrap;
-        align-items: center;
-      }
 
       form {
         flex-direction: row;
       }
     
       
-        .grid-column {
+      .grid-column {
           display: flex;
           flex: 1;
           flex-direction: column; 
@@ -240,8 +183,24 @@ footer p {
           flex-direction: row;
         }
       
-        .padding {
-          padding-bottom: 10 px; 
-        }
+      .group {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-flow: row nowrap;
+        align-items: center;
+      }
+
+      .item label , .item input , .item select , .item button {
+        display: flex;
+        width: 100%
+     }
+     
+     .v-form .item {
+       display: flex block;
+       flex: 1 1 auto;
+       flex-direction: column;
+     }
+
 
   }
