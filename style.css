@@ -64,6 +64,11 @@ img {
   grid-row-start: 1;
   grid-row-end: 3;
 }
+
+.bottomgroup {
+  display: flex;
+  flex-direction: column;
+}
 /* -------  Navigation ------- */
 
 header {
@@ -132,6 +137,9 @@ header nav ul li a:hover {
 form {
   border: 2px solid #ff385c;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 form label {
@@ -170,23 +178,15 @@ footer p {
    apply these rules. */
    @media all and (min-width: 480px) {
     header {
-      /* Changes the default setting from `block` to `flex`. */
       display: flex;
-      /* Pushes the items (the title and nav) to the far sides of the 
-         browser with space between them. */
-      justify-content: space-between;
-      /* Adds 0 pixels padding top and bottom, and 30 pixels padding 
-         left and right. */
-      padding: 0 30px;
       flex-direction: row;
+      justify-content: space-between;
+
 
     }
   
     header h1 {
-      /* Sets 14 pixels of margin above and below the `h1` and sets 
-          0 pixels of margin to the left and right. */
       margin: 14px 0;
-      /* Removes or sets 0 pixels of padding above the `h1`. */
       padding-top: 0;
     }
   
@@ -207,6 +207,15 @@ footer p {
       }
     
       .group {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-flow: row nowrap;
+        align-items: center;
+      }
+
+      .bottomgroup {
+        display: flex;
         flex-direction: row;
         justify-content: center;
         flex-flow: row nowrap;
@@ -217,7 +226,7 @@ footer p {
         flex-direction: row;
       }
     
-
+      
         .grid-column {
           display: flex;
           flex: 1;
@@ -231,5 +240,8 @@ footer p {
           flex-direction: row;
         }
       
+        .padding {
+          padding-bottom: 10 px; 
+        }
 
   }
